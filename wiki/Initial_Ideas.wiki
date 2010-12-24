@@ -1,0 +1,11 @@
+#summary To-do's, brain dump, research notes:
+#labels DesignNotes
+
+= List of things to do =
+
+1. Mex file to check if OpenCL platform available. Also return an object containing information on platforms and devices available. Maybe allow user to select which OpenCL device to operate on with some global variable setting?
+
+2. Check to see if a terminate-stay-resident like process is required or if releasing device context preserves memory available on GPGPU. Two possibilities:
+ * create context for every MATLAB operation call and release context at end  (cost of overhead?)
+ * TSR like process that listens for commands ? (is this possible w/ matlab mex?)
+
