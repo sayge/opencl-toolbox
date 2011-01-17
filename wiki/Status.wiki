@@ -1,0 +1,5 @@
+  * Expecting a first release by Jan. 21, 2011.  
+  * C++ mex backend completed and tested.
+  * MATLAB interface in progress to minimize actual OpenCL coding
+  * Still need to write CL kernels for addition, subtraction, etc.
+  * Also need to look into basic linear algebra functionality (BLAS, etc.)
