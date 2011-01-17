@@ -1,0 +1,24 @@
+#Install Guide
+
+= Prerequisites =
+
+The following modules are required prior to installing:
+* MATLAB R2009a or newer
+* C/C++ compiler (e.g. g++, Visual Studio)
+* OpenCL Platform (intel, amd, ATI, or nvidia)
+* CMake (http://www.cmake.org)
+
+= Details =
+
+1. Run cmake-gui and set the following config variables to the proper location:
+   * OPENCL_LIBRARIES : fullpath of the libOpenCL.so file (or OpenCL.lib file in Windows)
+   * OPENCL_INCLUDE_DIRS : path to the opencl include directory (e.g. /usr/include )
+       the include directory contains CL/cl.h
+   * MEX_COMPILER: full path of the mex compiler (e.g. /sw/matlab/bin/mex )
+   * MEX_MEXEXT: full path of the mexext script (e.g. /sw/matlab/bin/mexext )
+   * MATLAB_MEX_LIBRARY: full path of the libmex.so file (or libmex.lib in Windows)
+   * MATLAB_MX_LIBRARY: full path of the libmx.so file (or libmx.lib in Windows)
+   * MATLAB_INCLUDE_DIR: full path of the matlab include folder (e.g. /sw/matlab/extern/include ). This folder contains mex.h
+   * MATLAB_ENG_LIBRARY: full path of the libeng.so file (or libeng.lib in Windows)
+
+2. Run make in the build directory that was selected in step 1
