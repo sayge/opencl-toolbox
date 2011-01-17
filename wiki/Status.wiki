@@ -1,3 +1,4 @@
+#labels status,updates
 =Status Updates =
   * Expecting a first release by Jan. 21, 2011.  
   * C++ mex backend completed and tested.
