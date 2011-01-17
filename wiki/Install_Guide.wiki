@@ -3,10 +3,10 @@
 = Prerequisites =
 
 The following modules are required prior to installing:
-* MATLAB R2009a or newer
-* C/C++ compiler (e.g. g++, Visual Studio)
-* OpenCL Platform (intel, amd, ATI, or nvidia)
-* CMake (http://www.cmake.org)
+   * MATLAB R2009a or newer
+   * C/C++ compiler (e.g. g++, Visual Studio)
+   * OpenCL Platform (intel, amd, ATI, or nvidia)
+   * CMake (http://www.cmake.org)
 
 = Details =
 
