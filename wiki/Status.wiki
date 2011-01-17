@@ -1,3 +1,4 @@
+=Status Updates =
   * Expecting a first release by Jan. 21, 2011.  
   * C++ mex backend completed and tested.
   * MATLAB interface in progress to minimize actual OpenCL coding
