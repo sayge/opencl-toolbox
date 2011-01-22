@@ -1,4 +1,18 @@
 #summary Documentation for the openclcmd mex function
 
-= Introduction =
+== Notes ==
 All of the code provided here is made available to the public via the MIT License. Pretty much, you can use or modify the code to do whatever you want (commercially, non-commercially). You don't even have to pay royalties (unless you really want to), or publish your source code, or even give me credit (though, it would be uber-cool if you did mention my name in the credits as it would inspire me to contribute more work for free in the future). Anyway, regardless, the goal of this project is to speed up the research process and get more people up and running with using OpenCL. 
+
+== Overview ==
+
+The OpenCL toolbox is broken up into two components: 
+  * the raw interface (mex component): _openclcmd_
+  * the matlab class files
+
+The raw interface simply acts as the gateway to all of the available OpenCL functionality. It is simply a mex file that accepts commands to it. To enable additional OpenCL functionality, changes will have to be made to this component. The source files related to this component is in src/openclcmd.cpp
+
+The matlab class files are wrappers that simplify the calling convention for the OpenCL mex files. This is to simplify the calling convention to OpenCL. Currently, only the .CL files have to be written. 
+
+Future versions of the toolbox will override the math primitive functions (plus, minus, rdivide, ldivide, mrdivide, etc.) so that a command like a+b will add two objects in GPGPU memory without the user knowing the OpenCL coding convention and writing .CL files.
+
+... To be continued ... 
