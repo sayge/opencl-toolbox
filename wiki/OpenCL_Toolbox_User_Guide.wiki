@@ -69,7 +69,7 @@ Creates an OpenCL object with retrieved information about the available platform
   ocl = opencl();
 
 }}}
-The member attribute .platforms is set to contain information about the available platform. Example:
+The member attribute _platforms_ is contains information about the available platform. Example:
 {{{
 >> ocl = opencl();
 >> ocl.platforms
@@ -89,8 +89,29 @@ A platform is simply the library that implements the OpenCL functionality. It is
  * NVIDIA platform (which can talk with NVIDIA GPGPUs)
  * Intel platform (which can talk to CPUs for now)
 
-Each platform is associated with one or more devices. The device is the physical hardware that contains the GPU/CPU computing device we want to use.
+Each platform is associated with one or more devices. The device is the physical hardware that contains the GPU/CPU computing device we want to use. You can view details about the devices on the platforms as follows:
+{{{
+>> ocl.platforms(1).devices(1)
 
+ans = 
+
+                     profile: 'FULL_PROFILE'
+                        name: 'NVS 3100M'
+                      vendor: 'NVIDIA Corporation'
+                     version: 'OpenCL 1.0 CUDA'
+                      driver: '260.19.14'
+                  extensions: [1x270 char]
+           max_compute_units: 2
+    max_work_item_dimensions: 3
+         max_work_group_size: 512
+         max_work_item_sizes: [512 512 64]
+         max_clock_frequency: 1468
+             global_mem_size: 536084480
+       global_mem_cache_size: 0
+    max_constant_buffer_size: 65536
+           max_constant_args: 9
+              local_mem_size: 16384
+}}}
 == _openclcmd_ ==
 
 *NOTE:* This section is listed here mainly for those who want to avoid using the matlab class files, for the seasoned developers who want to extend the opencl-toolbox functionality, or  for those of you who are just curious. In any case, this function is called upon by the matlab class files, so understanding this section is not necessary for use. And now onto the documentation:
