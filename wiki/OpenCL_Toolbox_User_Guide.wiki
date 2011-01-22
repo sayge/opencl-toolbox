@@ -11,8 +11,68 @@ The OpenCL toolbox is broken up into two components:
 
 The raw interface simply acts as the gateway to all of the available OpenCL functionality. It is simply a mex file that accepts commands to it. To enable additional OpenCL functionality, changes will have to be made to this component. The source files related to this component is in src/openclcmd.cpp
 
-The matlab class files are wrappers that simplify the calling convention for the OpenCL mex files. This is to simplify the calling convention to OpenCL. Currently, only the .CL files have to be written. 
+The matlab class files are wrappers that simplify the calling convention for the OpenCL mex files. These files are convenience files that make it easier and somewhat fun to call OpenCL files. Currently, only the .CL files have to be written. In the future, a library of .CL files will be included and the simple matlab operators +, -, =, etc. will be overloaded to use the OpenCL versions.
 
-Future versions of the toolbox will override the math primitive functions (plus, minus, rdivide, ldivide, mrdivide, etc.) so that a command like a+b will add two objects in GPGPU memory without the user knowing the OpenCL coding convention and writing .CL files.
+For the majority of those who are interested in using this toolbox file as is, you can ignore the documentation on _openclcmd_ and solely use the matlab class files.
 
-... To be continued ... 
+== _opencl_ ==
+
+
+
+== _openclcmd_ ==
+
+*NOTE:* This section is listed here mainly for those who want to avoid using the matlab class files, for the seasoned developers who want to extend the opencl-toolbox functionality, or  for those of you who are just curious. In any case, this function is called upon by the matlab class files, so understanding this section is not necessary for use. And now onto the documentation:
+
+
+A list of available platform and devices can be retrieved by calling _openclcmd_ 
+in matlab as follows:
+{{{
+out = openclcmd();
+}}}
+_out_ now contains a list of platforms available. For example, on my laptop, out contains the following:
+
+{{{
+>> out 
+
+out = 
+
+       profile: 'FULL_PROFILE'
+          name: 'NVIDIA CUDA'
+        vendor: 'NVIDIA Corporation'
+       version: 'OpenCL 1.0 CUDA 3.2.1'
+    extensions: [1x131 char]
+       devices: [1x1 struct]
+
+}}}
+
+If you have more than one platform installed, it would be a list of platforms available. This platform has 1 device associated with it. It is listed under devices. Under _openclcmd_, we use the C indexing (zero-based index) to identify
+the platform number. Hence, this platform belongs to index = 0. (NOTE: for the matlab class files, we use one-based index since this is natural to matlab arrays. If you are using the matlab class file, _opencl_, you would refer to this platform as index = 1)
+
+Similarly, the first device available is associated with index 0 in C (NOTE: again, the Matlab class files will refer to the index as 1 since MATLAB's first index is 1). Let's see what the first device contains:
+
+{{{
+>> out.devices(1)
+
+ans = 
+
+       profile: 'FULL_PROFILE'
+          name: 'NVS 3100M'
+        vendor: 'NVIDIA Corporation'
+       version: 'OpenCL 1.0 CUDA'
+        driver: '260.19.14'
+    extensions: [1x131 char]
+}}}
+
+Thus, to initialise this device, one would mak
+
+{{{
+openclcmd( command_string, arg1, arg2, ... )
+}}}
+
+where _command_string_ and the arguments are specified below:
+
+|| *command_string* || *arguments*      || *description* ||
+||  (no string)     || (no args)        || Returns a list of available platforms and devices ||
+|| 'initialize'     || platform, device || Initializes OpenCL to use the specified platform and device. Platform is the index value of the platform returned in the list 
+
+value that ranges from 0
