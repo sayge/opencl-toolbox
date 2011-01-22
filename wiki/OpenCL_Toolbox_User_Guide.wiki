@@ -51,7 +51,7 @@ platform = 1;
 device = 1;
 ocl.initialize(platform, device);
 
-% Now let's load the kernel cl/simple_add.cl
+% Now let us load the kernel cl/simple_add.cl
 ocl.addfile('cl/simple_add.cl');
 
 % You can add additional files you want to use
