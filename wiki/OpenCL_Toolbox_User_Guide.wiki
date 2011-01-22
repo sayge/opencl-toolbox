@@ -17,6 +17,106 @@ For the majority of those who are interested in using this toolbox file as is, y
 
 == _opencl_ ==
 
+_opencl_ class creates a basic interface to the OpenCL device and platform
+.
+This class is responsible for setting up the device/platform to use,
+
+for adding and building the OpenCL source files, and for forcing a 
+
+"wait" to occur to allow all operations pending on the GPGPU to finish.
+
+
+Note: You may only create one instance of this class. Multiple instances
+
+of this class share the same device state. So, don't attempt to utilize
+
+multiple instances of this class. It doesn't provide any value.
+
+ 
+
+All cleanup and device release calls are handled automatically when you
+
+quit MATLAB or call "clear all"
+
+
+
+
+Please refer to the member functions for additional details:
+
+  * opencl.opencl
+ - constructor 
+  * opencl.initialize
+ - set OpenCL platform and device
+  * opencl.addfile
+ - add OpenCL (.cl) source file to send to GPGPU
+  * opencl.build
+ - compile sources added by addfile and send binary to GPGPU
+  * opencl.wait
+ - wait for all operations to finish on the GPGPU
+
+Example usage:
+
+{{{
+ocl = opencl();  % Fetch a list of available platforms and devices
+
+
+
+disp(ocl);  % Inspect the platform and device you want to use
+
+            % All platforms available are in the member attribute
+
+            % .platforms )
+
+               
+
+disp(ocl.platforms(1) );
+
+
+
+% Within each platform, there there is a list of devices associated with
+
+% the platform. You can view this in the .devices attribute for each
+
+% platform
+
+   
+
+disp(ocl.platforms(1).devices);
+
+disp(ocl.platforms(1).devices(1));
+
+
+
+% Assuming we want to pick platform 1 and device 1 (as viewed above):
+
+
+
+platform = 1; 
+
+device = 1;
+
+ocl.initialize(platform, device);
+
+
+
+% Now let's load the kernel cl/simple_add.cl
+
+ocl.addfile('cl/simple_add.cl');
+
+ 
+
+% You can add additional files you want to use
+
+% ocl.addfile('cl/another_file.cl');
+
+% ocl.addfile('cl/another_file2.cl');
+
+
+
+% Now let's build our kernel and send to the GPU device:
+
+ocl.build();   
+}}}
 
 
 == _openclcmd_ ==
