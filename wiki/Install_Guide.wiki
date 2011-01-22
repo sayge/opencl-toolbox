@@ -17,7 +17,7 @@
 
 ==Installation==
 
-# In MATLAB, open the make.m file and edit the opencl_include_dir
+1. In MATLAB, open the make.m file and edit the opencl_include_dir
 and opencl_lib_dir to point to the proper folders. 
 
   * _opencl_include_dir_ : is the directory containing CL/cl.h
@@ -28,7 +28,7 @@ and opencl_lib_dir to point to the proper folders.
       * e.g. Linux: /usr/lib , /sw/ati-stream-sdk-v2.2-lnx64/lib/x86_64 
       * e.g. Windows: C:\Program Files\ATI Stream\lib\x86 
 
-# In MATLAB, execute make (either press F5 or type in the matlab console): 
+2. In MATLAB, execute make (either press F5 or type in the matlab console): 
     make
 
-# Add this folder to your toolbox path. Now we're ready to go!
+3. Add this folder to your toolbox path. Now we're ready to go!
