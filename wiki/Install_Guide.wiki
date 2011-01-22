@@ -1,24 +1,48 @@
-#Install Guide
+#labels installation
+==========[ OpenCL Toolbox ]============================
+Version 0.11
+Date: 01.20.2011
+Website: http://code.google.com/p/opencl-toolbox
+SVN: http://opencl-toolbox.googlecode.com/svn/trunk/
 
-= Prerequisites =
+==========[ Requirements ] =============================
 
-The following modules are required prior to installing:
-   * MATLAB R2009a or newer
-   * C/C++ compiler (e.g. g++, Visual Studio)
-   * OpenCL Platform (intel, amd, ATI, or nvidia)
-   * CMake (http://www.cmake.org)
+- OpenCL 1.1+ device driver platform
+ (e.g. you can download and install one from:
+     http://developer.amd.com/zones/OpenCLZone            
+     http://software.intel.com/en-us/articles/intel-opencl-sdk   
+     http://www.nvidia.com/opencl
+  )
+- MATLAB R2009 or later (I've only tested this on R2010)
+- C++ compiler (such as g++ or Visual Studio )
 
-= Details =
+==========[ Installation ] =============================
 
-1. Run cmake-gui and set the following config variables to the proper location:
-   * OPENCL_LIBRARIES : fullpath of the libOpenCL.so file (or OpenCL.lib file in Windows)
-   * OPENCL_INCLUDE_DIRS : path to the opencl include directory (e.g. /usr/include )
-       the include directory contains CL/cl.h
-   * MEX_COMPILER: full path of the mex compiler (e.g. /sw/matlab/bin/mex )
-   * MEX_MEXEXT: full path of the mexext script (e.g. /sw/matlab/bin/mexext )
-   * MATLAB_MEX_LIBRARY: full path of the libmex.so file (or libmex.lib in Windows)
-   * MATLAB_MX_LIBRARY: full path of the libmx.so file (or libmx.lib in Windows)
-   * MATLAB_INCLUDE_DIR: full path of the matlab include folder (e.g. /sw/matlab/extern/include ). This folder contains mex.h
-   * MATLAB_ENG_LIBRARY: full path of the libeng.so file (or libeng.lib in Windows)
+1. In MATLAB, open the make.m file and edit the opencl_include_dir
+and opencl_lib_dir to point to the proper folders. 
 
-2. Run make in the build directory that was selected in step 1
+opencl_include_dir: is the directory containing CL/cl.h
+  (e.g. /usr/include  , or C:\Program Files\ATI Stream\include)
+
+opencl_lib_dir: is the directory containing libOpenCL.so (or OpenCL.lib in Windows)
+  (e.g. /usr/lib   , or C:\Program Files\ATI Stream\lib\x86 )
+
+2. Execute make 
+    make
+
+3. Add this folder to your toolbox path. Now we're ready to go!
+
+
+========== [ USAGE ] ================================
+
+see test_openclmatlab.m  for examples
+or if you want to use the raw interface, see test_openclcmd.m
+
+
+==========[ To Do list ] =============================
+
+- Better documentation and matlab examples
+- Override matlab plus, minus, rdivide, ldivide, times, pow, exp, etc.
+- BLAS functionality
+- Automatically determining global and local dimensions
+- Testing on various platforms
