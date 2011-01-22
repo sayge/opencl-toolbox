@@ -51,13 +51,13 @@ platform = 1;
 device = 1;
 ocl.initialize(platform, device);
 
-% Now let us load the kernel cl/simple_add.cl
+% Now lets load the kernel cl/simple_add.cl
 ocl.addfile('cl/simple_add.cl');
 
 % You can add additional files you want to use
 % ocl.addfile('cl/another_file.cl');
 % ocl.addfile('cl/another_file2.cl');
-% Now let's build our kernel and send to the GPU device:
+% Now lets build our kernel and send to the GPU device:
 ocl.build();
 
 }}}
