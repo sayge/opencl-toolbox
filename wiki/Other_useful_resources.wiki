@@ -1,3 +1,3 @@
-# Other useful projects related to OpenCL
+# summary Other useful projects related to OpenCL
 
 https://sites.google.com/site/iptatiproject/
