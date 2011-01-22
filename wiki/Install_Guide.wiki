@@ -28,7 +28,8 @@ and opencl_lib_dir to point to the proper folders.
       * e.g. Linux: /usr/lib , /sw/ati-stream-sdk-v2.2-lnx64/lib/x86_64 
       * e.g. Windows: C:\Program Files\ATI Stream\lib\x86 
 
-2. In MATLAB, execute make (either press F5 or type in the matlab console): 
+2. In MATLAB, execute make (either press F5 or type in the matlab console):
+{{{ 
     make
-
+}}}
 3. Add this folder to your toolbox path. Now we're ready to go!
