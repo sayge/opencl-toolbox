@@ -12,7 +12,6 @@
         * AMD/ATI: http://developer.amd.com/zones/OpenCLZone            
         * Intel: http://software.intel.com/en-us/articles/intel-opencl-sdk   
         * NVIDIA: http://www.nvidia.com/opencl
-  )
   * MATLAB R2009 or later (I've only tested this on R2010)
   * C++ compiler (such as g++ or Visual Studio )
 
