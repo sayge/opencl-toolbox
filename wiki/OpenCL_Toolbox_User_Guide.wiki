@@ -1,0 +1,4 @@
+#summary Documentation for the openclcmd mex function
+
+= Introduction =
+All of the code provided here is made available to the public via the MIT License. Pretty much, you can use or modify the code to do whatever you want (commercially, non-commercially). You don't even have to pay royalties (unless you really want to), or publish your source code, or even give me credit (though, it would be uber-cool if you did mention my name in the credits as it would inspire me to contribute more work for free in the future). Anyway, regardless, the goal of this project is to speed up the research process and get more people up and running with using OpenCL. 
