@@ -1,4 +1,6 @@
+#summary How to install opencl-toolbox for MATLAB.
 #labels installation
+
 =Install Guide v0.11=
 *Version* 0.11<br>
 *Date:* 01.20.2011<br>
