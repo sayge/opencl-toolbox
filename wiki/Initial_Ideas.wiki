@@ -3,21 +3,7 @@
 
 = List of things to do =
 
-# Mex file to check if OpenCL platform available:
-  * devicelist = get_cldevices( )
-  * Returns an array of strings containing the available platforms and devices for each platform. Index of list specifies the GPGPU device to utilize.
-
-# Need a mex file that does initialisation, data loading, kernel execution, etc..
-  * result = execute_gpu(cmd_string, ...)
-  * Thoughts: Need to utilize mexAtExit to register a function to de-initialize (properly close) device. Use global static variable for context and have kernels containing desired functionality compiled and loaded by some initialization command (or empty command ?) 
-
-# Current Usage:
-
-  1. Compiling (tested with Ubuntu 64-bit Linux, Matlab R2010b )
-    * Run cmake-gui
-    * Specify location of: 
-      * MEX_COMPILER:  (/usr/bin/mex  or /sw/matlab/bin/mex )
-      * MEX_MEXEXT:    (/usr/bin/mexext or /sw/matlab/bin/mexext )
-      * OPENCL_INCLUDE_DIRS (/usr/include or /sw/cuda/include  )
-      * OPENCL_LIBRARIES: (/usr/lib/libOpenCL.so )
-etc.
+  * Full device and platform information
+  * Image object representation and samplers (???) Anyone have a good tutorial on image objects? Never really dealt with them. 
+  * Finish documentation (I'll do this last)
+  * MATLAB class objects
