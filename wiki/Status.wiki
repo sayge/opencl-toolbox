@@ -1,7 +1,7 @@
 #labels updates
 =Status Updates =
 6/8/2013:
- * Since I don't have a MATLAB license, I've stopped all development efforts on the opencl-toolbox.
+ * Since my MATLAB license expired, I've stopped all development efforts on the opencl-toolbox. So, unless someone is willing to give me a license, I've switched to working on other projects.
 
 1/20/2011:
   * First release out. 
